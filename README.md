@@ -1,6 +1,6 @@
 # 数字人口播
 
-OPC-koubo 是橙哥出海（OPCchuhai）开源的 Renoise Agent Skill，用于制作数字人口播短视频：同一形象出镜，按文案说话。项目以 [MIT](LICENSE) 许可发布，可免费使用。
+OPC-koubo 是橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）开源的 Renoise Agent Skill，用于制作数字人口播短视频：同一形象出镜，按文案说话。项目以 [MIT](LICENSE) 许可发布，可免费使用。
 
 技能正文见 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)。将该目录交给 Claude、ChatGPT 等可连接外部工具的对话产品即可，无需修改代码。
 
@@ -33,7 +33,7 @@ https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_
 然后将下面整段复制给正在使用的 AI：
 
 ```text
-请安装并使用橙哥出海（OPCchuhai）开源的「数字人口播」：
+请安装并使用橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）开源的「数字人口播」：
 仓库 https://github.com/OPCchuhai/OPC-koubo
 请先阅读并遵守 skills/digital-human-koubo/SKILL.md。
 
@@ -79,7 +79,7 @@ WorkBuddy、豆包、千问、OpenClaw、Hermes，以及 Cursor 等其它产品�
 
 灵感来自 Berryxia / andyhuo520 的开源项目 [digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo)（MIT）。
 
-本仓库由橙哥出海自行重写，不是上游文件的原样复制。仓库中没有他人的照片，也没有他人的素材编号。请使用自己的照片。
+本仓库由橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）自行重写，不是上游文件的原样复制。仓库中没有他人的照片，也没有他人的素材编号。请使用自己的照片。
 
 ## 许可
 
