@@ -1,69 +1,85 @@
-# 用 AI 做数字人口播
+# 数字人口播
 
-这是一套免费说明，交给 Claude、ChatGPT 这类 AI，让它用 Renoise 做出「同一个人出镜说话」的短视频。橙哥出海（OPCchuhai）开源，许可是 MIT，不收费。
+OPC-koubo 是橙哥出海（OPCchuhai）开源的 Renoise Agent Skill，用于制作数字人口播短视频：同一形象出镜，按文案说话。项目以 [MIT](LICENSE) 许可发布，可免费使用。
 
-English: a free MIT skill from OPCchuhai. Your AI makes talking-head videos through Renoise.
+技能正文见 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)。将该目录交给 Claude、ChatGPT 等可连接外部工具的对话产品即可，无需修改代码。
 
-技能正文在 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)。把这个文件夹交给 AI 就行，不用自己改代码。
+## 特性
 
-## 你需要准备什么
+- 通过 Renoise 生成「同一个人出镜说话」的短视频
+- MCP 地址固定，在浏览器中登录，无需 API key
+- 写明 Claude、ChatGPT 的连接步骤，其它产品见技能正文
+- `persona.json` 仅为占位，须用本人或已获授权的照片，在自己的账号中重建形象
+- 报价并得到同意后再生成，成片标明由 AI 数字人演绎
 
-- 一个能对话的 AI：Claude、ChatGPT、WorkBuddy、豆包、千问、OpenClaw、Hermes，或其它能连上外部工具的产品
+## 适用
+
+适用于带货、解读、教程、种草等需要同一人出镜讲解的短视频。
+
+不适用于冒充真人、使用未经授权的照片，或写入他人账号的素材编号。
+
+## 快速开始
+
+使用前请准备：
+
+- 可连接外部工具的对话产品：Claude、ChatGPT、WorkBuddy、豆包、千问、OpenClaw、Hermes，或其它同类产品
 - 一个 Renoise 账号
-- 一张你本人的照片，或你已经得到授权、可以用来做数字人的照片
+- 一张本人照片，或已获授权、可用于制作数字人的照片
 
-## 最快开始
-
-还没有 Renoise 账号，或还没登录？先打开这条注册链接：
+尚未注册或尚未登录时，打开注册链接：
 
 https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_source=rewardful&via=quantbang
 
-然后把下面整段复制，贴进你正在用的 AI：
+然后将下面整段复制给正在使用的 AI：
 
 ```text
 请安装并使用橙哥出海（OPCchuhai）开源的「数字人口播」：
 仓库 https://github.com/OPCchuhai/OPC-koubo
-先阅读并遵守 skills/digital-human-koubo/SKILL.md。
+请先阅读并遵守 skills/digital-human-koubo/SKILL.md。
 
-请先看我正在用哪个 AI。如果还不能调用 Renoise 的 get_account，就按技能里「按产品连接 Renoise MCP」里对应的那一段，带我装好并登录。
+请先确认我正在用哪个 AI。如果还不能调用 Renoise 的 get_account，就按技能里「按产品连接 Renoise MCP」中对应的一节，带我安装并登录。
 地址只用这一条，不要改：
 https://renoise.tv/api/public/mcp
 
-如果我还没登录、或需要注册，只发这一条注册链接：
+如果我还没登录，或需要注册，只发这一条注册链接：
 https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_source=rewardful&via=quantbang
 
-连上之后，告诉我是哪个账号、还剩多少积分，再问我想做：产品广告、照着喜欢的视频复刻，还是从 Renoise 模板开始。我要做数字人口播的话，接着走技能里的口播流程。
+连上之后，告诉我是哪个账号、还剩多少积分，再问我想做哪一种：产品广告、照着喜欢的视频复刻，还是从 Renoise 模板开始。如果要做数字人口播，接着走技能里的口播流程。
 
-persona.json 只是占位。用我自己的照片，在我的 Renoise 账号里重建形象，不要写入别人的素材编号。花积分前先报价，等我同意再生成。成片要标明是 AI 数字人。
+persona.json 只是占位。请用我自己的照片，在我的 Renoise 账号里重建形象，不要写入别人的素材编号。花积分前先报价，等我同意后再生成。成片要标明是 AI 数字人。
 ```
 
-## 怎么连上 Renoise
+## 连接说明
 
-打开 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)，找到「按产品连接 Renoise MCP」，用和你的产品同名的那一段。地址只有这一条，不要改成别的：
+各产品的步骤见技能正文「按产品连接 Renoise MCP」。MCP 地址只有这一条，不要更换：
 
 https://renoise.tv/api/public/mcp
 
-最常见的两种，可以直接做：
+登录在浏览器中完成，无需准备 API key。
 
-**Claude。** 打开下面这个链接。页面会自动填好名称和地址，点添加。在网页里加好之后，Claude 电脑版也能用。
+### Claude
+
+打开下面的链接。页面会自动填好名称和地址，点击添加即可。在网页端添加后，Claude 桌面版也可以使用。
 
 https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Renoise&connectorUrl=https%3A%2F%2Frenoise.tv%2Fapi%2Fpublic%2Fmcp
 
-**ChatGPT。** 打开 https://chatgpt.com/plugins ，添加一个名为 Renoise 的自定义服务器，地址填 `https://renoise.tv/api/public/mcp`，登录方式选 OAuth。如果看不到添加入口，先到 Settings → Apps → Advanced settings，打开 Developer mode。
+### ChatGPT
 
-WorkBuddy、豆包、千问、OpenClaw、Hermes，以及 Cursor 这类其它产品，都用技能文件里对应的那一段，按它写的去点、去复制。浏览器会打开 Renoise 的页面，你在那里登录并允许访问。不用准备 API key。
+打开 https://chatgpt.com/plugins ，添加一个名为 Renoise 的自定义服务器，地址填写 `https://renoise.tv/api/public/mcp`，登录方式选择 OAuth。如果看不到添加入口，先到 Settings → Apps → Advanced settings，打开 Developer mode。
 
-## 连上之后做什么
+WorkBuddy、豆包、千问、OpenClaw、Hermes，以及 Cursor 等其它产品，按技能正文「按产品连接 Renoise MCP」中对应的一节操作。浏览器会打开 Renoise 页面，在该页登录并允许访问。
 
-1. 形象文件现在是空的占位。先用你自己的照片，在你的 Renoise 账号里做好数字人。
-2. 生成之前，AI 会先告诉你大概要花多少积分。你同意了再开始。
+## 使用流程
+
+1. `persona.json` 目前是占位。先用自己的照片，在自己的 Renoise 账号中建立数字人形象。
+2. 生成前，AI 会说明大约需要多少积分。同意之后再开始。
 3. 成片标明「内容由 AI 数字人演绎」。
 
 ## 致谢
 
-做法灵感来自 Berryxia / andyhuo520 的开源项目 [digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo)（MIT）。
+灵感来自 Berryxia / andyhuo520 的开源项目 [digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo)（MIT）。
 
-这个仓库是橙哥出海自己重写的，不是把上游文件原样拷过来。这里没有别人的照片，也没有别人的素材编号。请用你自己的照片。
+本仓库由橙哥出海自行重写，不是上游文件的原样复制。仓库中没有他人的照片，也没有他人的素材编号。请使用自己的照片。
 
 ## 许可
 
