@@ -4,15 +4,18 @@ OPC-koubo 是橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）�
 
 技能正文见 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)。将该目录交给 Claude、ChatGPT 等可连接外部工具的对话产品即可，无需修改代码。
 
-<p align="center">
-  <img src="docs/media/demo-koubo.gif" alt="AI数字人口播效果演示" width="320"><br>
-  <sub>效果演示</sub>
-</p>
-
-<p align="center">
-  <img src="docs/media/demo-koubo-poster.jpg" alt="AI数字人口播首帧封面" width="320"><br>
-  <sub>首帧封面</sub>
-</p>
+<table align="center">
+  <tr>
+    <td align="center" valign="top">
+      <img src="docs/media/demo-koubo-poster.jpg" alt="AI数字人口播首帧封面" width="260"><br>
+      <sub>首帧封面</sub>
+    </td>
+    <td align="center" valign="top">
+      <img src="docs/media/demo-koubo.gif" alt="AI数字人口播效果演示" width="260"><br>
+      <sub>效果演示</sub>
+    </td>
+  </tr>
+</table>
 
 ## 特性
 
