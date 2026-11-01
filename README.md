@@ -1,6 +1,6 @@
-# 数字人口播
+# AI数字人口播
 
-OPC-koubo 是橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）开源的 Renoise Agent Skill，用于制作数字人口播短视频：同一形象出镜，按文案说话。项目以 [MIT](LICENSE) 许可发布，可免费使用。
+OPC-koubo 是橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）开源的 Renoise Agent Skill，用于制作AI数字人口播短视频：同一形象出镜，按文案说话。项目以 [MIT](LICENSE) 许可发布，可免费使用。
 
 技能正文见 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)。将该目录交给 Claude、ChatGPT 等可连接外部工具的对话产品即可，无需修改代码。
 
@@ -33,7 +33,7 @@ https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_
 然后将下面整段复制给正在使用的 AI：
 
 ```text
-请安装并使用橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）开源的「数字人口播」：
+请安装并使用橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）开源的「AI数字人口播」：
 仓库 https://github.com/OPCchuhai/OPC-koubo
 请先阅读并遵守 skills/digital-human-koubo/SKILL.md。
 
@@ -44,7 +44,7 @@ https://renoise.tv/api/public/mcp
 如果我还没登录，或需要注册，只发这一条注册链接：
 https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_source=rewardful&via=quantbang
 
-连上之后，告诉我是哪个账号、还剩多少积分，再问我想做哪一种：产品广告、照着喜欢的视频复刻，还是从 Renoise 模板开始。如果要做数字人口播，接着走技能里的口播流程。
+连上之后，告诉我是哪个账号、还剩多少积分，再问我想做哪一种：产品广告、照着喜欢的视频复刻，还是从 Renoise 模板开始。如果要做AI数字人口播，接着走技能里的口播流程。
 
 persona.json 只是占位。请用我自己的照片，在我的 Renoise 账号里重建形象，不要写入别人的素材编号。花积分前先报价，等我同意后再生成。成片要标明是 AI 数字人。
 ```
