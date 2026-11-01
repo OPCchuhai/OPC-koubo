@@ -2,7 +2,7 @@
 
 OPC-koubo 是橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）开源的 Renoise Agent Skill，用于制作AI数字人口播短视频：同一形象出镜，按文案说话。项目以 [MIT](LICENSE) 许可发布，可免费使用。
 
-技能正文见 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)。将该目录交给 Claude、ChatGPT 等可连接外部工具的对话产品即可，无需修改代码。
+一键复制本项目地址（[https://github.com/OPCchuhai/OPC-koubo](https://github.com/OPCchuhai/OPC-koubo)）到 Claude、ChatGPT 等可连接外部工具的 AI 产品直接对话即可，无需修改代码。
 
 <p align="center">
   <img src="docs/media/demo-koubo.gif" alt="AI数字人口播效果演示" width="320"><br>
