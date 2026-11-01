@@ -69,6 +69,8 @@ https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=
 
 WorkBuddy、豆包、千问、OpenClaw、Hermes，以及 Cursor 等其它产品，按技能正文「按产品连接 Renoise MCP」中对应的一节操作。浏览器会打开 Renoise 页面，在该页登录并允许访问。
 
+WorkBuddy 若授权已成功但工具列表仍为空，只运行一次手动脚本（仓库根目录 `bash skills/digital-human-koubo/scripts/renoise-manual-connect.sh`，说明见技能正文「WorkBuddy 已知问题与手动接入」），不要反复重新授权。
+
 ## 使用流程
 
 1. `persona.json` 目前是占位。先用自己的照片，在自己的 Renoise 账号中建立数字人形象。
