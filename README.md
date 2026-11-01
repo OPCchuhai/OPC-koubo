@@ -6,7 +6,12 @@ OPC-koubo 是橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）�
 
 <p align="center">
   <img src="docs/media/demo-koubo.gif" alt="AI数字人口播效果演示" width="320"><br>
-  <sub>AI数字人口播效果演示</sub>
+  <sub>效果演示</sub>
+</p>
+
+<p align="center">
+  <img src="docs/media/demo-koubo-poster.jpg" alt="AI数字人口播首帧封面" width="320"><br>
+  <sub>首帧封面</sub>
 </p>
 
 ## 特性
