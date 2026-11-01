@@ -1,82 +1,69 @@
-# 数字人口播（OPC-koubo）
+# 用 AI 做数字人口播
 
-橙哥出海（OPCchuhai）开源的 Agent Skill：把数字人口播 / digital human koubo（真人出镜感的 talking-head 视频）交给 Claude、Cursor 等智能体，经 Renoise 官方 MCP 生成。
+这是一套免费说明，交给 Claude、ChatGPT 这类 AI，让它用 Renoise 做出「同一个人出镜说话」的短视频。橙哥出海（OPCchuhai）开源，许可是 MIT，不收费。
 
-English: a free, MIT-licensed Agent Skill for digital-human talking-head video. OPCchuhai does not sell the skill.
+English: a free MIT skill from OPCchuhai. Your AI makes talking-head videos through Renoise.
 
-## 项目定位
+技能正文在 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)。把这个文件夹交给 AI 就行，不用自己改代码。
 
-- 这是一份 **Agent Skill**，入口在 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)，用来做数字人口播。
-- 由 **橙哥出海（OPCchuhai）** 开源。技能本身免费，不单独售卖、不设付费墙。
+## 你需要准备什么
+
+- 一个能对话的 AI：Claude、ChatGPT、WorkBuddy、豆包、千问、OpenClaw、Hermes，或其它能连上外部工具的产品
+- 一个 Renoise 账号
+- 一张你本人的照片，或你已经得到授权、可以用来做数字人的照片
+
+## 最快开始
+
+还没有 Renoise 账号，或还没登录？先打开这条注册链接：
+
+https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_source=rewardful&via=quantbang
+
+然后把下面整段复制，贴进你正在用的 AI：
+
+```text
+请安装并使用橙哥出海（OPCchuhai）开源的「数字人口播」：
+仓库 https://github.com/OPCchuhai/OPC-koubo
+先阅读并遵守 skills/digital-human-koubo/SKILL.md。
+
+请先看我正在用哪个 AI。如果还不能调用 Renoise 的 get_account，就按技能里「按产品连接 Renoise MCP」里对应的那一段，带我装好并登录。
+地址只用这一条，不要改：
+https://renoise.tv/api/public/mcp
+
+如果我还没登录、或需要注册，只发这一条注册链接：
+https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_source=rewardful&via=quantbang
+
+连上之后，告诉我是哪个账号、还剩多少积分，再问我想做：产品广告、照着喜欢的视频复刻，还是从 Renoise 模板开始。我要做数字人口播的话，接着走技能里的口播流程。
+
+persona.json 只是占位。用我自己的照片，在我的 Renoise 账号里重建形象，不要写入别人的素材编号。花积分前先报价，等我同意再生成。成片要标明是 AI 数字人。
+```
+
+## 怎么连上 Renoise
+
+打开 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)，找到「按产品连接 Renoise MCP」，用和你的产品同名的那一段。地址只有这一条，不要改成别的：
+
+https://renoise.tv/api/public/mcp
+
+最常见的两种，可以直接做：
+
+**Claude。** 打开下面这个链接。页面会自动填好名称和地址，点添加。在网页里加好之后，Claude 电脑版也能用。
+
+https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Renoise&connectorUrl=https%3A%2F%2Frenoise.tv%2Fapi%2Fpublic%2Fmcp
+
+**ChatGPT。** 打开 https://chatgpt.com/plugins ，添加一个名为 Renoise 的自定义服务器，地址填 `https://renoise.tv/api/public/mcp`，登录方式选 OAuth。如果看不到添加入口，先到 Settings → Apps → Advanced settings，打开 Developer mode。
+
+WorkBuddy、豆包、千问、OpenClaw、Hermes，以及 Cursor 这类其它产品，都用技能文件里对应的那一段，按它写的去点、去复制。浏览器会打开 Renoise 的页面，你在那里登录并允许访问。不用准备 API key。
+
+## 连上之后做什么
+
+1. 形象文件现在是空的占位。先用你自己的照片，在你的 Renoise 账号里做好数字人。
+2. 生成之前，AI 会先告诉你大概要花多少积分。你同意了再开始。
+3. 成片标明「内容由 AI 数字人演绎」。
 
 ## 致谢
 
-流程和「用 Agent Skill 包一层数字人口播」的做法，灵感来自 Berryxia / andyhuo520 的开源项目 [digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo)（MIT）。
+做法灵感来自 Berryxia / andyhuo520 的开源项目 [digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo)（MIT）。
 
-本仓库是橙哥出海（OPCchuhai）自己重写、按 fork 方式重新包装的技能骨架，**不是**上游仓库的逐字节复制。这里没有上游的二进制、人物照片、包装素材或 Renoise material ID。请用你自己的照片重建形象。
-
-## 注册链接
-
-还没有 Renoise 账号、或尚未登录 Renoise、智能体发现还没连上而需要你先注册时，使用这一条注册链接：
-
-https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_source=rewardful&via=quantbang
-
-已有账号、只是要把工具接上时，用下一节的官方 MCP 地址，不要把 MCP 地址改成别的域名，也不要用别的地址代替这条注册链接。
-
-## 一键丢给 AI
-
-复制下面整段，贴进 Claude、Cursor 或其他智能体：
-
-```text
-请安装并使用橙哥出海（OPCchuhai）开源的「数字人口播」Agent Skill：
-仓库 https://github.com/OPCchuhai/OPC-koubo
-先阅读并遵守 skills/digital-human-koubo/SKILL.md，再帮我做数字人口播。
-
-连接 Renoise 官方 MCP，地址不要改：
-https://renoise.ai/api/public/mcp
-
-如果我还没注册、或 Renoise 没连上、需要我去注册：只发这一条注册链接（给尚未登录 Renoise 的用户）：
-https://www.renoise.ai/?utm_campaign=affiliate_program&utm_medium=affiliate&utm_source=rewardful&via=quantbang
-
-persona.json 只是占位。用我自己的照片在我的 Renoise 账号里重建形象；不要写入任何上游或其他账号的 material ID。花积分前先报价，等我同意再生成。
-```
-
-## 怎么用
-
-1. 克隆本仓库，或把 `skills/digital-human-koubo/` 交给智能体当技能目录。
-2. 让智能体阅读并遵守 [`skills/digital-human-koubo/SKILL.md`](skills/digital-human-koubo/SKILL.md)。
-3. 连接 Renoise **官方** MCP，地址保持为：
-
-   https://renoise.ai/api/public/mcp
-
-   Cursor 等支持远程 MCP 的客户端可以这样写：
-
-   ```json
-   {
-     "mcpServers": {
-       "renoise": {
-         "url": "https://renoise.ai/api/public/mcp"
-       }
-     }
-   }
-   ```
-
-4. 还没有账号、或尚未登录时，打开上一节的注册链接完成注册，再回到客户端登录授权。
-5. 用你自己的照片把 `persona.json` 从占位改成可用形象，然后再出片。
-
-模型、分辨率、积分和接口以 **当前 Renoise 文档** 加上本技能为准。本仓库提供的是技能骨架和流程大纲，不附带可直接开拍的人物素材。
-
-## 形象占位 persona.json
-
-[`skills/digital-human-koubo/persona.json`](skills/digital-human-koubo/persona.json) **只是占位**。姓名、外观、声音、提示词和 `reference_material` 都是 `TODO`，`photos` 为空，里面没有任何 Renoise material ID。
-
-你需要：
-
-1. 准备一张你有权使用的照片（本人或已获授权的肖像）。
-2. 在自己的 Renoise 账号里按现行文档重建数字人。
-3. 把**你的账号**返回的引用写回 `persona.json`。
-
-不要填上游项目或别人账号里的素材编号。那些编号不能在你的账号上使用，本仓库也不会附带上游的人物照片。
+这个仓库是橙哥出海自己重写的，不是把上游文件原样拷过来。这里没有别人的照片，也没有别人的素材编号。请用你自己的照片。
 
 ## 许可
 
