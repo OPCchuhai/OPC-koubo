@@ -1,0 +1,25 @@
+{
+  "_comment": "PLACEHOLDER ONLY. Rebuild this persona with photos you have the rights to use. Do not paste upstream or third-party Renoise material IDs, task IDs, or persona photos. Leave TODO fields empty until your own Renoise account returns a reference for your photo.",
+  "name": "TODO",
+  "status": "placeholder",
+  "photos": [],
+  "renoise": {
+    "reference_material": "TODO",
+    "note": "Upload your own reference photo in your Renoise account, then put that account's material id here. This file ships with no material id."
+  },
+  "look": "TODO: describe the person in your own photos (only a likeness you are allowed to use).",
+  "voice": {
+    "engine": "TODO",
+    "desc": "TODO",
+    "speed_cps": null
+  },
+  "model": {
+    "name": "TODO",
+    "ratio": "TODO",
+    "max_seconds": null,
+    "note": "Follow current Renoise docs for model name, resolution, and segment length. Do not copy stale settings from another project."
+  },
+  "acts": {},
+  "prompt_template": "TODO",
+  "disclosure": "内容由 AI 数字人演绎"
+}
