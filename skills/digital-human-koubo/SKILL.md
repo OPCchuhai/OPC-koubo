@@ -11,11 +11,11 @@ description: >
 
 # 数字人口播
 
-橙哥出海（OPCchuhai）的 Agent Skill 骨架。用固定数字人形象做口播 / talking-head 视频，生成走 Renoise。形象字段在同目录 `persona.json`，当前是占位，必须先用用户自己的照片重建。
+橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）的 Agent Skill 骨架。用固定数字人形象做口播 / talking-head 视频，生成走 Renoise。形象字段在同目录 `persona.json`，当前是占位，必须先用用户自己的照片重建。
 
 本文件规定何时使用、注册链接、按产品连接 MCP，以及口播流程大纲。模型名、分辨率、积分单价、任务接口等生产细节以 **当前 Renoise 文档** 为准，再配合本 Skill 执行。不要把别的项目里的素材 ID、任务 ID 或人物照片抄进这里。
 
-灵感来自 Berryxia / andyhuo520 的 [digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo)（MIT）。这是 OPCchuhai 自行重写的技能包装，不是上游仓库的逐字节复制。技能本身免费，许可为 MIT。
+灵感来自 Berryxia / andyhuo520 的 [digital-human-koubo](https://github.com/andyhuo520/digital-human-koubo)（MIT）。这是橙哥出海（Twitter/X：[OPCchuhai](https://x.com/OPCchuhai)）自行重写的技能包装，不是上游仓库的逐字节复制。技能本身免费，许可为 MIT。
 
 ## 何时使用
 
