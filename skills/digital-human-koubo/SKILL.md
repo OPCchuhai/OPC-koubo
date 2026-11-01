@@ -81,6 +81,43 @@ https://renoise.tv/api/public/mcp
 连上之后：调用 get_account，告诉我连的是哪个账号、还剩多少积分，再问我想做什么：产品广告、照着喜欢的视频复刻，或者从 Renoise 模板开始。
 ```
 
+#### WorkBuddy 已知问题与手动接入（2026-11 验证）
+
+WorkBuddy 的自定义 MCP 客户端有一个确定性 bug：Renoise 的 OAuth 服务器只发 `authorization_code`，token 响应**不带 `expires_in`、也不发 `refresh_token`**。WorkBuddy 拿不到有效期就把 token 按「0 秒有效」写入，写入瞬间即判 `expired-without-refresh`，随后连接失败、工具数恒为 0。
+
+**判定标志**（满足就直接走手动接入，不要再让用户重试授权）：
+
+- 用户点了「信任」，浏览器授权也显示成功，但 `get_account` 始终调不到、工具列表为空；
+- 授权回调成功 2 次以上，结果一模一样；重启应用、重新信任都无效。
+
+**手动接入**（智能体自己执行，用户只需在浏览器点一次授权链接）。优先用技能目录里的相对路径；仓库检出与 WorkBuddy 安装位置都能跑同一份脚本：
+
+```bash
+# 本仓库检出：在仓库根目录运行
+bash skills/digital-human-koubo/scripts/renoise-manual-connect.sh
+
+# 技能装在哪就从哪跑
+bash <本技能目录>/scripts/renoise-manual-connect.sh
+
+# WorkBuddy 安装路径
+bash ~/.workbuddy/skills/digital-human-koubo/scripts/renoise-manual-connect.sh
+```
+
+脚本做的事：动态注册 OAuth 客户端 → 生成 PKCE + state → 在 `127.0.0.1:8765` 起本地回调 → 打印 `https://renoise.tv/mcp-connect?...` 授权链接让用户打开 → 用授权码换 token（**必须带浏览器 User-Agent，否则 Cloudflare 返回 403/1010 拦截**）→ token 存 `~/.renoise-mcp/token.json`（600 权限）→ 自动调用 `get_account` 验证。
+
+之后所有 MCP 调用走脚本生成的通道，端点仍是官方的 `https://renoise.tv/api/public/mcp`：
+
+```bash
+~/.renoise-mcp/mcp.sh get_account '{}'
+~/.renoise-mcp/mcp.sh search_skills '{"query":"talking head"}'
+```
+
+注意三点：
+
+- 请求头固定带 `Accept: application/json, text/event-stream`，响应是 SSE，解析 `data: ` 行；`initialize` 后没有 `mcp-session-id`，是无状态模式。
+- token 形如 `fk_...`，长期有效；但存在 `/tmp` 或家目录时注意机器重启后若失效，重跑脚本即可（30 秒）。
+- 报价、生成等一切业务流程不变：花积分前必须先 `estimate_cost` 并得到用户同意。
+
 ### ChatGPT
 
 ```text
@@ -108,6 +145,8 @@ https://renoise.tv/api/public/mcp
 
 连上之后：调用 get_account，告诉我连的是哪个账号、还剩多少积分，再问我想做什么：产品广告、照着喜欢的视频复刻，或者从 Renoise 模板开始。
 ```
+
+- **Claude Code：** 用户在 Claude Code 里安装或开始使用本技能后，提醒他先 **重启 Claude Code，然后运行 `/mcp`**，Renoise MCP 才会被加载。
 
 ### OpenClaw
 
